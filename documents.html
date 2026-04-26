@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documents - EmoSL</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/inner-pages.css">
+
+  <style>
+    /* ---- Search bar ---- */
+    .doc-search-wrap {
+      margin-bottom: 2.5rem;
+      position: relative;
+      max-width: 520px;
+    }
+    .doc-search-icon {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--sage-green);
+      pointer-events: none;
+      display: flex;
+    }
+    .doc-search-input {
+      width: 100%;
+      padding: 0.85rem 2.8rem 0.85rem 2.9rem;
+      border: 2px solid rgba(12,59,46,0.12);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text-main);
+      outline: none;
+      box-shadow: var(--shadow);
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .doc-search-input:focus {
+      border-color: var(--sage-green);
+      box-shadow: 0 0 0 4px rgba(109,151,115,0.12);
+    }
+    .doc-search-input::placeholder { color: var(--text-muted); }
+    .doc-search-clear {
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1;
+      padding: 0;
+      display: none;
+      transition: color 0.2s;
+    }
+    .doc-search-clear:hover { color: var(--dark-green); }
+
+    /* ---- No results ---- */
+    .doc-no-results {
+      display: none;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+    .doc-no-results .doc-no-icon { font-size: 2.5rem; margin-bottom: 0.75rem; display: block; }
+    .doc-no-results p { color: var(--text-muted); font-size: 0.95rem; max-width: none; }
+
+    /* ---- Hidden card ---- */
+    .doc-card-v2.doc-hidden { display: none !important; }
+    .doc-section-heading.hidden { display: none !important; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.png" alt="EmoSL Logo" class="nav-logo-img">
+      <span class="nav-logo-text">Emo<em>SL</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="domain.html">Domain</a></li>
+      <li><a href="milestones.html">Milestones</a></li>
+      <li><a href="documents.html" class="active">Documents</a></li>
+      <li><a href="slides.html">Slides</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="container">
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <span class="eyebrow">Project Documents</span>
+    </div>
+    <h1>The Paper Trail</h1>
+    <p>Every formal document across the research lifecycle - available for review, reference and academic verification.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!-- ====== SEARCH BAR ====== -->
+    <div class="doc-search-wrap reveal">
+      <span class="doc-search-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+      </span>
+      <input type="text" id="docSearchInput" class="doc-search-input"
+             placeholder="Search - e.g. Proposal, Facial, Hashtag, Speech, Checklist…"
+             autocomplete="off" spellcheck="false">
+      <button class="doc-search-clear" id="docSearchClear" aria-label="Clear">✕</button>
+    </div>
+
+    <!-- No results message -->
+    <div class="doc-no-results" id="docNoResults">
+      <span class="doc-no-icon">🔍</span>
+      <p>No documents matched "<strong id="docNoResultsTerm"></strong>"</p>
+      <p style="margin-top:0.4rem;font-size:0.85rem;">
+        Try: Proposal · Charter · Checklist · Thesis · Facial · Hashtag · Speech · Multilingual
+      </p>
+    </div>
+
+    <!-- ====== FOUNDATIONAL DOCS ====== -->
+    <div class="ornament reveal doc-section-heading" id="hdg-found-1">
+      <div class="ornament-line"></div><span class="eyebrow">Foundational Documents</span>
+    </div>
+    <h2 class="section-title reveal doc-section-heading" id="hdg-found-2"
+        style="margin-bottom:2rem;">Core Research Documents</h2>
+
+    <div class="doc-row-3 reveal" id="grp-foundational">
+
+      <a href="https://drive.google.com/drive/folders/1hhf5Vs5QIIA3IfpKvkVdh0Qyt9GCPABz?usp=sharing"
+         target="_blank" rel="noopener" class="doc-card-v2 doc-available"
+         data-search="project charter foundational authorisation scope sliit">
+        <div class="dcv2-illustration dcv2-ill-charter">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="14" y="8" width="44" height="56" rx="6" fill="#E8F0EA" stroke="#6D9773" stroke-width="2"/>
+            <rect x="14" y="8" width="44" height="14" rx="6" fill="#6D9773"/>
+            <rect x="14" y="16" width="44" height="6" fill="#6D9773"/>
+            <circle cx="50" cy="52" r="10" fill="white" stroke="#6D9773" stroke-width="2"/>
+            <path d="M44 52 L48 56 L56 48" stroke="#6D9773" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="20" y="28" width="24" height="3" rx="1.5" fill="#6D9773" opacity="0.5"/>
+            <rect x="20" y="34" width="18" height="3" rx="1.5" fill="#6D9773" opacity="0.35"/>
+            <rect x="20" y="40" width="20" height="3" rx="1.5" fill="#6D9773" opacity="0.35"/>
+            <circle cx="22" cy="14" r="5" fill="#FFBA00"/>
+            <text x="22" y="18" font-size="7" fill="white" text-anchor="middle" font-weight="bold">★</text>
+          </svg>
+        </div>
+        <div class="dcv2-body">
+          <h4>Project Charter</h4>
+          <span class="dcv2-tag dcv2-avail">✓ Available</span>
+        </div>
+        <div class="dcv2-arrow">↗</div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1jU0oS0BuMcvhv3lKEXb-dk5SxdcKq5oh?usp=drive_link"
+         target="_blank" rel="noopener" class="doc-card-v2 doc-available"
+         data-search="research proposal document literature review objectives methodology">
+        <div class="dcv2-illustration dcv2-ill-proposal">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="10" width="40" height="52" rx="6" fill="#FFF8E6" stroke="#FFBA00" stroke-width="2"/>
+            <circle cx="50" cy="48" r="13" fill="white" stroke="#FFBA00" stroke-width="2"/>
+            <circle cx="50" cy="48" r="7" fill="#FFF8E6" stroke="#FFBA00" stroke-width="1.5"/>
+            <line x1="55" y1="54" x2="62" y2="62" stroke="#FFBA00" stroke-width="3" stroke-linecap="round"/>
+            <rect x="18" y="18" width="26" height="3" rx="1.5" fill="#FFBA00" opacity="0.6"/>
+            <rect x="18" y="24" width="20" height="3" rx="1.5" fill="#FFBA00" opacity="0.4"/>
+            <rect x="18" y="30" width="22" height="3" rx="1.5" fill="#FFBA00" opacity="0.4"/>
+            <rect x="18" y="36" width="16" height="3" rx="1.5" fill="#FFBA00" opacity="0.3"/>
+          </svg>
+        </div>
+        <div class="dcv2-body">
+          <h4>Research Proposal</h4>
+          <span class="dcv2-tag dcv2-avail">✓ Available</span>
+        </div>
+        <div class="dcv2-arrow">↗</div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1l3hZG34dfZqzWeNvtaJea83r0gzc2EZI?usp=sharing"
+         target="_blank" rel="noopener" class="doc-card-v2 doc-available"
+         data-search="checklist documents pp1 pp2 progress presentation sign-off milestone">
+        <div class="dcv2-illustration dcv2-ill-checklist">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="12" y="14" width="48" height="52" rx="6" fill="#E8F0EA" stroke="#6D9773" stroke-width="2"/>
+            <rect x="26" y="8" width="20" height="12" rx="4" fill="#6D9773"/>
+            <rect x="30" y="11" width="12" height="6" rx="2" fill="#E8F0EA"/>
+            <rect x="28" y="28" width="18" height="3" rx="1.5" fill="#6D9773" opacity="0.5"/>
+            <circle cx="22" cy="29.5" r="4" fill="#6D9773" opacity="0.2" stroke="#6D9773" stroke-width="1.2"/>
+            <path d="M20 29.5 L22 31.5 L25 27.5" stroke="#6D9773" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="28" y="38" width="22" height="3" rx="1.5" fill="#6D9773" opacity="0.5"/>
+            <circle cx="22" cy="39.5" r="4" fill="#6D9773" opacity="0.2" stroke="#6D9773" stroke-width="1.2"/>
+            <path d="M20 39.5 L22 41.5 L25 37.5" stroke="#6D9773" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="28" y="48" width="14" height="3" rx="1.5" fill="#BB8A52" opacity="0.4"/>
+            <circle cx="22" cy="49.5" r="4" fill="none" stroke="#BB8A52" stroke-width="1.2" stroke-dasharray="2 2"/>
+            <circle cx="52" cy="52" r="8" fill="#FFBA00" opacity="0.15" stroke="#FFBA00" stroke-width="1.5"/>
+            <text x="52" y="56" font-size="9" fill="#FFBA00" text-anchor="middle">⏳</text>
+          </svg>
+        </div>
+        <div class="dcv2-body">
+          <h4>Checklist Documents</h4>
+          <span class="dcv2-tag dcv2-partial">Checklist 1 ✓ · Checklist 2 ⏳</span>
+        </div>
+        <div class="dcv2-arrow">↗</div>
+      </a>
+
+    </div>
+
+    <!-- ====== FINAL RESEARCH DOCUMENTS ====== -->
+    <div class="ornament reveal doc-section-heading" id="hdg-final-1" style="margin-top:4rem;">
+      <div class="ornament-line"></div><span class="eyebrow">Final Research Documents</span>
+    </div>
+    <h2 class="section-title reveal doc-section-heading" id="hdg-final-2"
+        style="margin-bottom:2rem;">Final Thesis &amp; Sub-Documents</h2>
+
+    <div class="doc-row-final reveal" id="grp-thesis">
+      <a href="https://drive.google.com/drive/folders/1pJ-BEptIpBmIJHvACMY2mdnEHjr6Im57?usp=drive_link"
+         target="_blank" rel="noopener" class="doc-card-v2 doc-pending doc-main-thesis"
+         data-search="final thesis main document all engines integrated system findings">
+        <div class="dcv2-illustration dcv2-ill-thesis">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="10" width="48" height="54" rx="6" fill="#E8F0EA" stroke="#6D9773" stroke-width="2"/>
+            <rect x="8" y="10" width="10" height="54" rx="4" fill="#6D9773"/>
+            <rect x="22" y="18" width="28" height="3" rx="1.5" fill="#6D9773" opacity="0.5"/>
+            <rect x="22" y="24" width="22" height="3" rx="1.5" fill="#6D9773" opacity="0.35"/>
+            <rect x="22" y="30" width="26" height="3" rx="1.5" fill="#6D9773" opacity="0.35"/>
+            <rect x="22" y="36" width="18" height="3" rx="1.5" fill="#6D9773" opacity="0.3"/>
+            <rect x="22" y="42" width="24" height="3" rx="1.5" fill="#6D9773" opacity="0.3"/>
+            <circle cx="56" cy="20" r="11" fill="white" stroke="#FFBA00" stroke-width="1.5"/>
+            <text x="56" y="25" font-size="13" text-anchor="middle">🎓</text>
+          </svg>
+        </div>
+        <div class="dcv2-body">
+          <h4>Final Thesis - Main Document</h4>
+          <p class="dcv2-sub">All four AI engines · Integrated system · Full findings</p>
+          <span class="dcv2-tag dcv2-pend">⏳ Pending</span>
+        </div>
+        <div class="dcv2-arrow dcv2-arrow-muted">↗</div>
+      </a>
+    </div>
+
+    <div class="doc-sub-grid reveal" id="grp-subdocs" style="margin-top:1.25rem;">
+
+      <a href="https://drive.google.com/drive/folders/1v1tqEeZO47aZPKouOv7v-S24B8XE4grU?usp=drive_link"
+         target="_blank" rel="noopener" class="doc-card-v2 doc-pending"
+         data-search="sub document 1 facial recognition ellepola it22300164 vision cnn">
+        <div class="dcv2-illustration dcv2-ill-sub1">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="52" height="52" rx="10" fill="#E8F0EA" stroke="#6D9773" stroke-width="1.5"/>
+            <circle cx="36" cy="32" r="13" fill="white" stroke="#6D9773" stroke-width="1.5"/>
+            <ellipse cx="30" cy="29" rx="3" ry="3.5" fill="#0C3B2E"/>
+            <ellipse cx="42" cy="29" rx="3" ry="3.5" fill="#0C3B2E"/>
+            <circle cx="31.2" cy="27.5" r="1" fill="white"/>
+            <circle cx="43.2" cy="27.5" r="1" fill="white"/>
+            <path d="M28 38 Q36 44 44 38" stroke="#0C3B2E" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+            <line x1="16" y1="18" x2="20" y2="18" stroke="#FFBA00" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="16" y1="18" x2="16" y2="22" stroke="#FFBA00" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="52" y1="18" x2="56" y2="18" stroke="#FFBA00" stroke-width="1.8" stroke-linecap="round"/>
+            <line x1="56" y1="18" x2="56" y2="22" stroke="#FFBA00" stroke-width="1.8" stroke-linecap="round"/>
+            <rect x="18" y="54" width="36" height="3" rx="1.5" fill="#6D9773" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="dcv2-body">
+          <h4>Sub-Doc 1 - Facial Recognition</h4>
+          <p class="dcv2-sub">Ellepola E.W.P.W.M.R.S.K · IT22300164</p>
+          <span class="dcv2-tag dcv2-pend">⏳ Pending</span>
+        </div>
+        <div class="dcv2-arrow dcv2-arrow-muted">↗</div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1y18T7gTgFsFzWgugZfbkeU4Z7Qg2NzA-?usp=drive_link"
+         target="_blank" rel="noopener" class="doc-card-v2 doc-pending"
+         data-search="sub document 2 hashtag engine recommendation bandaranayake it22590930 sinhala english bilingual">
+        <div class="dcv2-illustration dcv2-ill-sub2">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="52" height="52" rx="10" fill="#FFF8E6" stroke="#FFBA00" stroke-width="1.5"/>
+            <line x1="28" y1="20" x2="24" y2="46" stroke="#0C3B2E" stroke-width="2.8" stroke-linecap="round"/>
+            <line x1="38" y1="20" x2="34" y2="46" stroke="#0C3B2E" stroke-width="2.8" stroke-linecap="round"/>
+            <line x1="20" y1="30" x2="42" y2="30" stroke="#0C3B2E" stroke-width="2.8" stroke-linecap="round"/>
+            <line x1="18" y1="39" x2="40" y2="39" stroke="#0C3B2E" stroke-width="2.8" stroke-linecap="round"/>
+            <rect x="44" y="22" width="10" height="6" rx="2.5" fill="#6D9773"/>
+            <text x="49" y="27.5" font-size="4.5" fill="white" text-anchor="middle" font-family="monospace" font-weight="bold">EN</text>
+            <rect x="44" y="32" width="10" height="6" rx="2.5" fill="#BB8A52"/>
+            <text x="49" y="37.5" font-size="4.5" fill="white" text-anchor="middle" font-family="monospace" font-weight="bold">SI</text>
+            <circle cx="49" cy="52" r="7" fill="#FFBA00" opacity="0.2" stroke="#FFBA00" stroke-width="1.2"/>
+            <text x="49" y="56" font-size="9" text-anchor="middle">#</text>
+          </svg>
+        </div>
+        <div class="dcv2-body">
+          <h4>Sub-Doc 2 - Hashtag Engine</h4>
+          <p class="dcv2-sub">Bandaranayake E.M.T.T · IT22590930</p>
+          <span class="dcv2-tag dcv2-pend">⏳ Pending</span>
+        </div>
+        <div class="dcv2-arrow dcv2-arrow-muted">↗</div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1TrRlYMWME-qMObDezdirHdaAKQRzMN3Q?usp=drive_link"
+         target="_blank" rel="noopener" class="doc-card-v2 doc-pending"
+         data-search="sub document 3 multilingual detector aththanayake it22608536 singlish text emoji nlp">
+        <div class="dcv2-illustration dcv2-ill-sub3">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="52" height="52" rx="10" fill="#fdf5e8" stroke="#BB8A52" stroke-width="1.5"/>
+            <rect x="14" y="16" width="30" height="16" rx="7" fill="#E8F0EA" stroke="#6D9773" stroke-width="1.2"/>
+            <polygon points="20,32 14,40 26,32" fill="#E8F0EA" stroke="#6D9773" stroke-width="1.2" stroke-linejoin="round"/>
+            <rect x="19" y="21" width="18" height="2.5" rx="1.2" fill="#6D9773" opacity="0.6"/>
+            <rect x="19" y="26" width="12" height="2.5" rx="1.2" fill="#6D9773" opacity="0.4"/>
+            <circle cx="46" cy="24" r="6" fill="#FFBA00"/>
+            <circle cx="44.5" cy="22.5" r="0.9" fill="#0C3B2E"/>
+            <circle cx="47.5" cy="22.5" r="0.9" fill="#0C3B2E"/>
+            <path d="M44 26 Q46 28.5 48 26" stroke="#0C3B2E" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+            <rect x="28" y="44" width="30" height="14" rx="7" fill="#FFF3CD" stroke="#BB8A52" stroke-width="1.2"/>
+            <rect x="33" y="49" width="18" height="2.5" rx="1.2" fill="#BB8A52" opacity="0.6"/>
+            <rect x="33" y="53" width="12" height="2.5" rx="1.2" fill="#BB8A52" opacity="0.4"/>
+            <circle cx="18" cy="51" r="5" fill="#FFBA00"/>
+            <circle cx="16.8" cy="49.5" r="0.8" fill="#0C3B2E"/>
+            <circle cx="19.2" cy="49.5" r="0.8" fill="#0C3B2E"/>
+            <path d="M16.5 53 Q18 55 19.5 53" stroke="#0C3B2E" stroke-width="1" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="dcv2-body">
+          <h4>Sub-Doc 3 - Multilingual Detector</h4>
+          <p class="dcv2-sub">Aththanayake A.M.P.M.B · IT22608536</p>
+          <span class="dcv2-tag dcv2-pend">⏳ Pending</span>
+        </div>
+        <div class="dcv2-arrow dcv2-arrow-muted">↗</div>
+      </a>
+
+      <a href="https://drive.google.com/drive/folders/1-VpBpj6kyRC8BCvKivvpro4v-pxy9o5C?usp=drive_link"
+         target="_blank" rel="noopener" class="doc-card-v2 doc-pending"
+         data-search="sub document 4 speech engine maneesha it22562838 audio sinhala valency recognition">
+        <div class="dcv2-illustration dcv2-ill-sub4">
+          <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="52" height="52" rx="10" fill="#E8F0EA" stroke="#6D9773" stroke-width="1.5"/>
+            <rect x="28" y="14" width="16" height="24" rx="8" fill="white" stroke="#6D9773" stroke-width="1.8"/>
+            <line x1="28" y1="24" x2="44" y2="24" stroke="#6D9773" stroke-width="0.9" opacity="0.5"/>
+            <line x1="28" y1="29" x2="44" y2="29" stroke="#6D9773" stroke-width="0.9" opacity="0.5"/>
+            <path d="M20 36 Q20 48 36 48 Q52 48 52 36" stroke="#0C3B2E" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <line x1="36" y1="48" x2="36" y2="56" stroke="#0C3B2E" stroke-width="2" stroke-linecap="round"/>
+            <line x1="28" y1="56" x2="44" y2="56" stroke="#0C3B2E" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="14" cy="28" r="5.5" fill="#6D9773"/>
+            <line x1="14" y1="25.5" x2="14" y2="30.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="11.5" y1="28" x2="16.5" y2="28" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="58" cy="28" r="5.5" fill="#BB8A52"/>
+            <line x1="55.5" y1="28" x2="60.5" y2="28" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="dcv2-body">
+          <h4>Sub-Doc 4 - Speech Engine</h4>
+          <p class="dcv2-sub">Maneesha T.A.S. · IT22562838</p>
+          <span class="dcv2-tag dcv2-pend">⏳ Pending</span>
+        </div>
+        <div class="dcv2-arrow dcv2-arrow-muted">↗</div>
+      </a>
+
+    </div>
+
+    <div class="reveal" style="background:var(--light-sage);border-radius:var(--radius-lg);padding:1.4rem 1.75rem;border-left:4px solid var(--sage-green);margin-top:2.5rem;">
+      <p style="color:var(--dark-green);font-size:0.87rem;max-width:none;line-height:1.75;">
+        <strong>Note:</strong> Documents marked <em>Pending</em> will be linked once the corresponding phase is finalised. All <em>Available</em> cards open the document in Google Drive.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="text-decoration:none;">
+        <img src="assets/logo.png" alt="EmoSL Logo" class="nav-logo-img">
+        <span class="nav-logo-text">Emo<em>SL</em></span>
+      </a>
+      <p>Cross-Regional Facial Emotion Recognition using Social Media Stimuli in Sri Lankans. SLIIT Faculty of Computing.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="domain.html">Domain</a></li>
+        <li><a href="milestones.html">Milestones</a></li>
+        <li><a href="documents.html">Documents</a></li>
+        <li><a href="slides.html">Slides</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Project</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025/26 EmoSL Research Group · SLIIT Faculty of Computing</p>
+    <span class="project-id">PROJECT ID: 25-26J-354</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+(function () {
+  const input    = document.getElementById('docSearchInput');
+  const clearBtn = document.getElementById('docSearchClear');
+  const noRes    = document.getElementById('docNoResults');
+  const noTerm   = document.getElementById('docNoResultsTerm');
+  const allCards = document.querySelectorAll('.doc-card-v2');
+
+  /* Groups: each group has a container and associated heading elements */
+  const groups = [
+    {
+      container: document.getElementById('grp-foundational'),
+      headings:  ['hdg-found-1', 'hdg-found-2']
+    },
+    {
+      container: document.getElementById('grp-thesis'),
+      headings:  ['hdg-final-1', 'hdg-final-2']
+    },
+    {
+      container: document.getElementById('grp-subdocs'),
+      headings:  [] /* shares headings with thesis group */
+    }
+  ];
+
+  function cardText(card) {
+    return [
+      card.querySelector('h4')?.textContent || '',
+      card.querySelector('.dcv2-sub')?.textContent || '',
+      card.getAttribute('data-search') || ''
+    ].join(' ').toLowerCase();
+  }
+
+  function runSearch(raw) {
+    const term = raw.trim().toLowerCase();
+    clearBtn.style.display = term ? 'block' : 'none';
+
+    let total = 0;
+
+    /* Show/hide individual cards */
+    allCards.forEach(c => {
+      const show = !term || cardText(c).includes(term);
+      c.classList.toggle('doc-hidden', !show);
+      if (show) total++;
+    });
+
+    /* Show/hide group containers & their headings */
+    const finalVisible = { 'hdg-final-1': false, 'hdg-final-2': false };
+
+    groups.forEach(g => {
+      if (!g.container) return;
+      const anyVisible = [...g.container.querySelectorAll('.doc-card-v2')]
+                            .some(c => !c.classList.contains('doc-hidden'));
+      g.container.style.display = anyVisible ? '' : 'none';
+
+      g.headings.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          /* For shared final headings accumulate visibility */
+          if (id in finalVisible) {
+            if (anyVisible) finalVisible[id] = true;
+          } else {
+            el.classList.toggle('hidden', !anyVisible);
+          }
+        }
+      });
+    });
+
+    /* Apply accumulated visibility to shared final headings */
+    Object.entries(finalVisible).forEach(([id, vis]) => {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('hidden', !vis);
+    });
+
+    /* No-results message */
+    if (term && total === 0) {
+      noRes.style.display = 'block';
+      noTerm.textContent  = raw.trim();
+    } else {
+      noRes.style.display = 'none';
+    }
+  }
+
+  input.addEventListener('input', () => runSearch(input.value));
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    input.focus();
+    runSearch('');
+  });
+
+  /* Press "/" to focus, Escape to clear */
+  document.addEventListener('keydown', e => {
+    if (e.key === '/' && document.activeElement !== input) {
+      e.preventDefault(); input.focus();
+    }
+    if (e.key === 'Escape' && document.activeElement === input) {
+      input.value = ''; runSearch(''); input.blur();
+    }
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Milestones - EmoSL</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/inner-pages.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.png" alt="EmoSL Logo" class="nav-logo-img">
+      <span class="nav-logo-text">Emo<em>SL</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="domain.html">Domain</a></li>
+      <li><a href="milestones.html" class="active">Milestones</a></li>
+      <li><a href="documents.html">Documents</a></li>
+      <li><a href="slides.html">Slides</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="container">
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <span class="eyebrow">Project Milestones</span>
+    </div>
+    <h1>Every Checkpoint, Accounted For</h1>
+    <p>From the very first proposal to the final viva - a transparent record of every academic assessment, when it happened and what it was worth.</p>
+
+    <div class="milestone-hero-pills">
+      <div class="mhp">
+        <span class="mhp-num">5</span>
+        <span class="mhp-label">Milestones</span>
+      </div>
+      <div class="mhp-divider"></div>
+      <div class="mhp">
+        <span class="mhp-num" style="color:#7dd4a0;">3</span>
+        <span class="mhp-label">Completed</span>
+      </div>
+      <div class="mhp-divider"></div>
+      <div class="mhp">
+        <span class="mhp-num" style="color:var(--mustard);">2</span>
+        <span class="mhp-label">Upcoming</span>
+      </div>
+      <div class="mhp-divider"></div>
+      <div class="mhp">
+        <span class="mhp-num">100</span>
+        <span class="mhp-label">Total Marks</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <!--
+      TAB BUTTONS — each data-tab value must exactly match
+      the id of its corresponding tab-panel div below.
+      all      → id="all"
+      proposal → id="proposal"
+      pp1      → id="pp1"
+      pp2      → id="pp2"
+      final    → id="final"
+    -->
+    <div class="tabs-bar reveal">
+      <button class="tab-btn active" data-tab="all">All Milestones</button>
+      <button class="tab-btn" data-tab="proposal">Project Proposal</button>
+      <button class="tab-btn" data-tab="pp1">Progress 1</button>
+      <button class="tab-btn" data-tab="pp2">Progress 2</button>
+      <button class="tab-btn" data-tab="final">Final &amp; Viva</button>
+    </div>
+
+    <!-- ===== ALL ===== -->
+    <div class="tab-panel active" id="all">
+
+      <div class="timeline-strip reveal">
+        <div class="tl-track">
+          <div class="tl-fill" style="width:60%"></div>
+        </div>
+        <div class="tl-nodes">
+          <div class="tl-node done">
+            <div class="tl-dot"></div>
+            <span class="tl-label">Proposal</span>
+            <span class="tl-date">Sep 2025</span>
+          </div>
+          <div class="tl-node done">
+            <div class="tl-dot"></div>
+            <span class="tl-label">PP 1</span>
+            <span class="tl-date">Jan 2026</span>
+          </div>
+          <div class="tl-node done">
+            <div class="tl-dot"></div>
+            <span class="tl-label">PP 2</span>
+            <span class="tl-date">Mar 2026</span>
+          </div>
+          <div class="tl-node upcoming">
+            <div class="tl-dot"></div>
+            <span class="tl-label">Final &amp; Viva</span>
+            <span class="tl-date">May 2026</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milestone-card reveal">
+        <div class="mc-head">
+          <div class="mc-icon-wrap mc-icon-done">📋</div>
+          <div class="mc-title-block">
+            <h4>Project Proposal</h4>
+            <p>Introduced the research problem, defined the four-engine solution and set the overall project framework.</p>
+          </div>
+          <div class="mc-meta">
+            <span class="mc-date">📅 Sep 2025</span>
+            <span class="mc-marks">6 Marks</span>
+            <span class="mc-done">✓ Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milestone-card reveal reveal-delay-1">
+        <div class="mc-head">
+          <div class="mc-icon-wrap mc-icon-done">🎯</div>
+          <div class="mc-title-block">
+            <h4>Progress Presentation 1</h4>
+            <p>Validated data sourcing, early model experiments, completed the app frontend and finalised the system architecture.</p>
+          </div>
+          <div class="mc-meta">
+            <span class="mc-date">📅 Jan 2026</span>
+            <span class="mc-marks">15 Marks</span>
+            <span class="mc-done">✓ Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milestone-card reveal reveal-delay-2">
+        <div class="mc-head">
+          <div class="mc-icon-wrap mc-icon-done">🚀</div>
+          <div class="mc-title-block">
+            <h4>Progress Presentation 2</h4>
+            <p>Live demo of four working AI engines inside the Flutter app, with benchmark results vs. global models.</p>
+          </div>
+          <div class="mc-meta">
+            <span class="mc-date">📅 Mar 2026</span>
+            <span class="mc-marks">18 Marks</span>
+            <span class="mc-done">✓ Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="milestone-card reveal reveal-delay-3">
+        <div class="mc-head">
+          <div class="mc-icon-wrap mc-icon-upcoming">🏆</div>
+          <div class="mc-title-block">
+            <h4>Final Assessment &amp; Viva</h4>
+            <p>Full EmoSL system - all four engines live, user testing done, app on Google Play.</p>
+          </div>
+          <div class="mc-meta">
+            <span class="mc-date">📅 May 2026</span>
+            <span class="mc-marks">20 Marks</span>
+            <span class="mc-pending">⏳ Upcoming</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ===== PROPOSAL ===== -->
+    <div class="tab-panel" id="proposal">
+      <div class="milestone-card milestone-card-detail">
+        <div class="mcd-top">
+          <div class="mcd-icon">📋</div>
+          <div>
+            <h4>Project Proposal</h4>
+            <div class="mc-meta" style="margin-top:0.5rem;">
+              <span class="mc-date">📅 September 2025</span>
+              <span class="mc-marks">6 Marks — 6%</span>
+              <span class="mc-done">✓ Completed</span>
+            </div>
+          </div>
+        </div>
+        <p>Established the core thesis that existing Emotion AI systems fail Sri Lankans due to demographic bias and outlined the four-engine architecture, mobile-first delivery and three-phase commercialisation roadmap.</p>
+        <div class="mcd-tags">
+          <span class="tag tag-green">Research Problem Defined</span>
+          <span class="tag tag-gold">Objectives Formalised</span>
+          <span class="tag tag-tan">Methodology Scoped</span>
+          <span class="tag tag-dark">Architecture Proposed</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PP1 ===== -->
+    <div class="tab-panel" id="pp1">
+      <div class="milestone-card milestone-card-detail">
+        <div class="mcd-top">
+          <div class="mcd-icon">🎯</div>
+          <div>
+            <h4>Progress Presentation 1</h4>
+            <div class="mc-meta" style="margin-top:0.5rem;">
+              <span class="mc-date">📅 January 2026</span>
+              <span class="mc-marks">15 Marks — 15%</span>
+              <span class="mc-done">✓ Completed</span>
+            </div>
+          </div>
+        </div>
+        <p>Data sourcing protocols approved, system architecture signed off by supervisors and all four research sub-streams demonstrated working environments with early proof-of-concept results on localised data.</p>
+        <div class="mcd-tags">
+          <span class="tag tag-green">Data Protocol Approved</span>
+          <span class="tag tag-gold">Architecture Confirmed</span>
+          <span class="tag tag-tan">Prototype Demonstrated</span>
+          <span class="tag tag-dark">All 4 Streams Active</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== PP2 ===== -->
+    <div class="tab-panel" id="pp2">
+      <div class="milestone-card milestone-card-detail">
+        <div class="mcd-top">
+          <div class="mcd-icon">🚀</div>
+          <div>
+            <h4>Progress Presentation 2</h4>
+            <div class="mc-meta" style="margin-top:0.5rem;">
+              <span class="mc-date">📅 March 2026</span>
+              <span class="mc-marks">18 Marks — 18%</span>
+              <span class="mc-done">✓ Completed</span>
+            </div>
+          </div>
+        </div>
+        <p>Four fully operational engines demoed live inside the Flutter app. Benchmarks showed measurable accuracy gains over global baselines on Sri Lankan test data.</p>
+        <div class="mcd-tags">
+          <span class="tag tag-green">4 Engines Live</span>
+          <span class="tag tag-gold">Mobile Demo Done</span>
+          <span class="tag tag-tan">Benchmarks Shown</span>
+          <span class="tag tag-dark">System Integrated</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== FINAL & VIVA — id="final" matches data-tab="final" ===== -->
+    <div class="tab-panel" id="final">
+      <div class="milestone-card milestone-card-detail milestone-card-upcoming">
+        <div class="mcd-top">
+          <div class="mcd-icon">🏆</div>
+          <div>
+            <h4>Final Assessment &amp; Viva</h4>
+            <div class="mc-meta" style="margin-top:0.5rem;">
+              <span class="mc-date">📅 May 2026</span>
+              <span class="mc-marks">20 Marks - 20%</span>
+              <span class="mc-pending">⏳ Upcoming</span>
+            </div>
+          </div>
+        </div>
+        <p>Complete EmoSL app presented, with all four AI engines integrated, user acceptance testing conducted with the 20-39 demographic and the full app live on Google Play.</p>
+        <div class="mcd-tags">
+          <span class="tag tag-tan">Final Assessment - 10 Marks</span>
+          <span class="tag tag-tan">Viva - 10 Marks</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="text-decoration:none;">
+        <img src="assets/logo.png" alt="EmoSL Logo" class="nav-logo-img">
+        <span class="nav-logo-text">Emo<em>SL</em></span>
+      </a>
+      <p>Cross-Regional Facial Emotion Recognition using Social Media Stimuli in Sri Lankans. SLIIT Faculty of Computing.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="domain.html">Domain</a></li>
+        <li><a href="milestones.html">Milestones</a></li>
+        <li><a href="documents.html">Documents</a></li>
+        <li><a href="slides.html">Slides</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Project</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025/26 EmoSL Research Group · SLIIT Faculty of Computing</p>
+    <span class="project-id">PROJECT ID: 25-26J-354</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

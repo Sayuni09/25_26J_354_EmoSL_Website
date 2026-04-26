@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - EmoSL</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/inner-pages.css">
+
+  <!-- ============================================================
+       EmailJS SDK — loads the email sending library
+       ============================================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <style>
+    /* ---- Toast notification ---- */
+    .toast {
+      position: fixed;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      background: var(--dark-green);
+      color: var(--white);
+      padding: 1rem 2rem;
+      border-radius: 99px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 8px 40px rgba(12,59,46,0.35);
+      z-index: 9999;
+      transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  opacity 0.5s ease;
+      opacity: 0;
+      white-space: nowrap;
+      border: 1.5px solid rgba(109,151,115,0.4);
+    }
+    .toast.toast-show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+    .toast.toast-error {
+      background: #5c1a1a;
+      border-color: rgba(255,90,90,0.35);
+    }
+    .toast-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+    .toast-success .toast-icon { background: rgba(109,151,115,0.3); }
+    .toast-error   .toast-icon { background: rgba(255,90,90,0.25); }
+
+    /* ---- Button loading spinner ---- */
+    .btn-sending {
+      pointer-events: none;
+      opacity: 0.75;
+    }
+    .btn-sending::after {
+      content: '';
+      display: inline-block;
+      width: 14px; height: 14px;
+      border: 2px solid rgba(12,59,46,0.3);
+      border-top-color: var(--dark-green);
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      margin-left: 0.5rem;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+<!-- ---- Toast notification element ---- -->
+<div class="toast" id="toast" role="alert" aria-live="polite">
+  <div class="toast-icon" id="toast-icon"></div>
+  <span id="toast-msg"></span>
+</div>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/logo.png" alt="EmoSL Logo" class="nav-logo-img">
+      <span class="nav-logo-text">Emo<em>SL</em></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="domain.html">Domain</a></li>
+      <li><a href="milestones.html">Milestones</a></li>
+      <li><a href="documents.html">Documents</a></li>
+      <li><a href="slides.html">Slides</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html" class="nav-cta active">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="page-hero-grid"></div>
+  <div class="container">
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <span class="eyebrow">Get in Touch</span>
+    </div>
+    <h1>Let's Start a Conversation</h1>
+    <p>Whether you're a fellow researcher, an industry collaborator, a journalist or simply curious about what we've built - we'd genuinely love to hear from you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- ====== INFO SIDE ====== -->
+      <div class="reveal">
+        <div class="ornament"><div class="ornament-line"></div><span class="eyebrow">Reach Us</span></div>
+        <h2 class="section-title" style="margin-bottom:2rem;">Connect with<br>the Team</h2>
+
+        <!-- CARD 1 — Institution -->
+        <div class="cic-v2">
+          <div class="cic-v2-icon cic-v2-icon-institution">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="24" width="40" height="26" rx="3" fill="#E8F0EA" stroke="#6D9773" stroke-width="1.8"/>
+              <polygon points="4,24 28,8 52,24" fill="#6D9773" opacity="0.85"/>
+              <rect x="14" y="30" width="5" height="16" rx="1.5" fill="#6D9773" opacity="0.5"/>
+              <rect x="25.5" y="30" width="5" height="16" rx="1.5" fill="#6D9773" opacity="0.5"/>
+              <rect x="37" y="30" width="5" height="16" rx="1.5" fill="#6D9773" opacity="0.5"/>
+              <rect x="22" y="38" width="12" height="12" rx="2" fill="#6D9773" opacity="0.7"/>
+              <circle cx="31" cy="44" r="1.2" fill="white"/>
+              <line x1="28" y1="4" x2="28" y2="11" stroke="#FFBA00" stroke-width="1.8" stroke-linecap="round"/>
+              <polygon points="28,4 36,7 28,10" fill="#FFBA00"/>
+            </svg>
+          </div>
+          <div class="cic-v2-body">
+            <h4>Institution</h4>
+            <p>SLIIT Faculty of Computing<br>New Kandy Road, Malabe<br>Sri Lanka 10115</p>
+          </div>
+        </div>
+
+        <!-- CARD 2 — General Enquiries -->
+        <div class="cic-v2">
+          <div class="cic-v2-icon cic-v2-icon-email">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="14" width="44" height="30" rx="6" fill="#FFF8E6" stroke="#FFBA00" stroke-width="1.8"/>
+              <path d="M6 20 L28 34 L50 20" stroke="#FFBA00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <line x1="6" y1="44" x2="20" y2="32" stroke="#FFBA00" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <line x1="50" y1="44" x2="36" y2="32" stroke="#FFBA00" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+              <circle cx="44" cy="12" r="3" fill="#FFBA00" opacity="0.8"/>
+              <circle cx="50" cy="8" r="2" fill="#FFBA00" opacity="0.5"/>
+              <circle cx="48" cy="16" r="1.5" fill="#FFBA00" opacity="0.4"/>
+            </svg>
+          </div>
+          <div class="cic-v2-body">
+            <h4>General Enquiries</h4>
+            <a href="mailto:emosl.care@gmail.com" class="cic-v2-link">emosl.care@gmail.com</a>
+          </div>
+        </div>
+
+        <!-- CARD 3 — Project Reference -->
+        <div class="cic-v2">
+          <div class="cic-v2-icon cic-v2-icon-ref">
+            <svg viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="12" width="36" height="38" rx="5" fill="#E8F0EA" stroke="#6D9773" stroke-width="1.8"/>
+              <rect x="20" y="7" width="16" height="10" rx="4" fill="#6D9773"/>
+              <rect x="23" y="9.5" width="10" height="5" rx="2" fill="#E8F0EA"/>
+              <rect x="16" y="22" width="24" height="3" rx="1.5" fill="#6D9773" opacity="0.55"/>
+              <rect x="16" y="29" width="18" height="3" rx="1.5" fill="#6D9773" opacity="0.4"/>
+              <rect x="16" y="36" width="3" height="8" rx="1" fill="#FFBA00" opacity="0.8"/>
+              <rect x="21" y="36" width="2" height="8" rx="1" fill="#FFBA00" opacity="0.6"/>
+              <rect x="25" y="36" width="4" height="8" rx="1" fill="#FFBA00" opacity="0.8"/>
+              <rect x="31" y="36" width="2" height="8" rx="1" fill="#FFBA00" opacity="0.6"/>
+              <rect x="35" y="36" width="3" height="8" rx="1" fill="#FFBA00" opacity="0.8"/>
+            </svg>
+          </div>
+          <div class="cic-v2-body">
+            <h4>Project Reference</h4>
+            <p>Project ID: 25-26J-354<br>Academic Year 2025–2026</p>
+          </div>
+        </div>
+
+        <div class="contact-tagline">
+          <span>🧠</span>
+          <p>Building Emotion AI that finally speaks Sri Lankan</p>
+        </div>
+      </div>
+
+      <!-- ====== FORM SIDE ====== -->
+      <div class="contact-form-wrap reveal reveal-delay-2">
+        <div class="ornament"><div class="ornament-line"></div><span class="eyebrow">Send a Message</span></div>
+        <h3 style="color:var(--dark-green);margin:0.5rem 0 2rem;font-size:1.6rem;">Drop Us a Line</h3>
+
+        <!-- Using a real <form> element for EmailJS -->
+        <form id="contact-form" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="first_name" placeholder="Your first name" required>
+            </div>
+            <div class="form-group">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="last_name" placeholder="Your last name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="from_email" placeholder="you@example.com" required>
+          </div>
+
+          <div class="form-group">
+            <label for="org">Organisation (optional)</label>
+            <input type="text" id="org" name="organisation" placeholder="Your institution or company">
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="" disabled selected>Select a subject...</option>
+              <option>Research Collaboration</option>
+              <option>Academic Enquiry</option>
+              <option>Industry Partnership</option>
+              <option>Media / Press</option>
+              <option>Technical Question</option>
+              <option>General Question</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell us about your inquiry" required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" id="send-btn"
+                  style="width:100%;justify-content:center;font-size:1rem;">
+            Send Message ↗
+          </button>
+
+        </form>
+
+        <p style="font-size:0.78rem;color:var(--text-muted);margin-top:1rem;text-align:center;max-width:none;line-height:1.7;">
+          We aim to respond to all enquiries within 2 working days.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="text-decoration:none;">
+        <img src="assets/logo.png" alt="EmoSL Logo" class="nav-logo-img">
+        <span class="nav-logo-text">Emo<em>SL</em></span>
+      </a>
+      <p>Cross-Regional Facial Emotion Recognition using Social Media Stimuli in Sri Lankans. SLIIT Faculty of Computing.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="domain.html">Domain</a></li>
+        <li><a href="milestones.html">Milestones</a></li>
+        <li><a href="documents.html">Documents</a></li>
+        <li><a href="slides.html">Slides</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Project</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025/26 EmoSL Research Group · SLIIT Faculty of Computing</p>
+    <span class="project-id">PROJECT ID: 25-26J-354</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+
+<script>
+  
+
+  const EMAILJS_PUBLIC_KEY  = 'lnhAJ0eYyZ_hNx_KH';
+  const EMAILJS_SERVICE_ID  = 'service_im1yvni';
+  const EMAILJS_TEMPLATE_ID = 'template_1qurlds';
+
+  /* ---- Initialise EmailJS ---- */
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
+  /* ---- Toast helper ---- */
+  function showToast(message, isError = false) {
+    const toast   = document.getElementById('toast');
+    const icon    = document.getElementById('toast-icon');
+    const msgEl   = document.getElementById('toast-msg');
+
+    toast.className = 'toast ' + (isError ? 'toast-error' : 'toast-success');
+    icon.textContent = isError ? '✕' : '✓';
+    msgEl.textContent = message;
+
+    // Show
+    requestAnimationFrame(() => {
+      toast.classList.add('toast-show');
+    });
+
+    // Auto-hide after 4 seconds
+    setTimeout(() => {
+      toast.classList.remove('toast-show');
+    }, 4000);
+  }
+
+  /* ---- Form submit handler ---- */
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const btn       = document.getElementById('send-btn');
+    const fname     = document.getElementById('fname').value.trim();
+    const email     = document.getElementById('email').value.trim();
+    const message   = document.getElementById('message').value.trim();
+
+    /* Basic validation */
+    if (!fname || !email || !message) {
+      showToast('Please fill in your name, email, and message.', true);
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      showToast('Please enter a valid email address.', true);
+      return;
+    }
+
+    /* Show loading state */
+    btn.textContent = 'Sending…';
+    btn.classList.add('btn-sending');
+    btn.disabled = true;
+
+    /* Build template params matching your EmailJS template variables */
+    const templateParams = {
+      first_name:   document.getElementById('fname').value.trim(),
+      last_name:    document.getElementById('lname').value.trim(),
+      from_email:   document.getElementById('email').value.trim(),
+      organisation: document.getElementById('org').value.trim() || '—',
+      subject:      document.getElementById('subject').value || 'General Question',
+      message:      document.getElementById('message').value.trim(),
+    };
+
+    /* Send via EmailJS */
+    emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      .then(() => {
+        /* Success */
+        showToast('✓ Message sent! We\'ll get back to you within 2 working days.');
+        document.getElementById('contact-form').reset();
+      })
+      .catch((error) => {
+        /* Failure */
+        console.error('EmailJS error:', error);
+        showToast('Something went wrong. Please try emailing us directly.', true);
+      })
+      .finally(() => {
+        /* Restore button */
+        btn.textContent = 'Send Message ↗';
+        btn.classList.remove('btn-sending');
+        btn.disabled = false;
+      });
+  });
+</script>
+
+</body>
+</html>
